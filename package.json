@@ -1,0 +1,16 @@
+{
+  "name": "x-market-backend",
+  "version": "1.0.0",
+  "description": "x-market-backend with node express and javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node",
+    "expoess",
+    "javascript"
+  ],
+  "author": "Dev Faldu",
+  "license": "ISC"
+}
