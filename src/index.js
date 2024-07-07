@@ -7,8 +7,12 @@ dotenv.config({
 })
 
 dbConnection()
-.then(() => {
+.then((response) => {
+  console.log(`Mongodb is connected to host ${response.connection.host}`);
   app.listen(process.env.PORT, () => {
     console.log(`App is listening on port ${process.env.PORT}`)
   })
+})
+.catch((error) => {     
+  console.log(`Error encountered: ${error}`)
 })
