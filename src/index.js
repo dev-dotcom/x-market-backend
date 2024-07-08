@@ -2,9 +2,9 @@ import app from "./app.js";
 import dbConnection from "./db/connection.js";
 import dotenv from "dotenv";
 
-dotenv.config({
-  path :'./env'
-})
+const env = process.env.NODE_ENV || 'development';
+const envFilePath = path.resolve(__dirname, `.env.${env}`);
+dotenv.config({path: envFilePath})
 
 dbConnection()
 .then((response) => {
@@ -16,3 +16,4 @@ dbConnection()
 .catch((error) => {     
   console.log(`Error encountered: ${error}`)
 })
+

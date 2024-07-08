@@ -5,8 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon -r dotenv/config --experimental-json-modules  src/index.js"
+    "start:dev": "cross-env NODE_ENV=development nodemon -r dotenv/config --experimental-json-modules src/index.js",
+    "start:staging": "cross-env NODE_ENV=staging nodemon -r dotenv/config --experimental-json-modules src/index.js",
+    "start:prod": "cross-env NODE_ENV=production nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
     "node",
@@ -26,6 +27,7 @@
     "mongoose-aggregate-paginate-v2": "^1.1.1"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "nodemon": "^3.1.4",
     "prettier": "^3.3.2"
   }
