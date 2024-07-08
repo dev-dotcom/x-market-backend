@@ -6,13 +6,11 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const env = process.env.NODE_ENV || 'development';
-const envFilePath = path.resolve(__dirname, `.env.${env}`);
+const __filename = fileURLToPath(import.meta.url); //        \x-market-backend\src\server.js
+const __dirname = dirname(__filename);//                     \x-market-backend\src
+const env = process.env.NODE_ENV || 'development';         
+const envFilePath = path.resolve(__dirname, `../.env.${env}`); //      \.env.development
 dotenv.config({ path: envFilePath });
-
-console.log(process.env.NODE_ENV);
 
 
 dbConnection()
